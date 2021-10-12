@@ -34,7 +34,7 @@ var recaptcha_response = grecaptcha.getResponse();
     .signInWithEmailAndPassword(userEmail, userPass)
     .catch(function (error) {
       var errorMessage = error.message;
-      grecaptcha.reset();
+      reset();
       window.alert("Error : " + errorMessage);
     });
   return true;
@@ -59,16 +59,21 @@ var recaptcha_response = grecaptcha.getResponse();
     })
     .catch(function (error) {
       // Handle Errors here.
+      var errorCode = error.code;
       var errorMessage = error.message;
-      grecaptcha.reset();
+      reset();
       window.alert("Error : " + errorMessage);
     });
   return true;
 }
 
-function logout() {
-  firebase.auth().signOut();
+function reset() {
   grecaptcha.reset();
   document.getElementById("email_field").value = '';
   document.getElementById("password_field").value = '';
+}
+
+function logout() { 
+  firebase.auth().signOut();
+  reset();
 }
