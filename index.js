@@ -59,7 +59,6 @@ var recaptcha_response = grecaptcha.getResponse();
     })
     .catch(function (error) {
       // Handle Errors here.
-      var errorCode = error.code;
       var errorMessage = error.message;
       grecaptcha.reset();
       window.alert("Error : " + errorMessage);
@@ -69,4 +68,7 @@ var recaptcha_response = grecaptcha.getResponse();
 
 function logout() {
   firebase.auth().signOut();
+  grecaptcha.reset();
+  document.getElementById('email_field').value = '';
+  document.getElementById('email_field').value = '';
 }
