@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Firebase Login</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="login_div" class="main-div">
+      <h3>Firebase Login</h3>
+      <input type="email" placeholder="Email..." id="email_field" />
+      <input type="password" placeholder="Password..." id="password_field" />
+
+      <button onclick="login()">Login to Account</button>
+      <button onclick="register()">Create Account</button>
+    </div>
+
+    <div id="user_div" class="loggedin-div">
+      <h3>Welcome User</h3>
+      <p id="user_para">
+        Welcome to Firebase web login Example. You're currently logged in.
+      </p>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCeYqPvs6sAciuc5_MyVuUizjkQ1cc_5ME",
+        authDomain: "web-login-4678e.firebaseapp.com",
+        projectId: "web-login-4678e",
+        storageBucket: "web-login-4678e.appspot.com",
+        messagingSenderId: "927005750554",
+        appId: "1:927005750554:web:84e8f8de38dd2ade07e8a3",
+        measurementId: "G-HQM59KF5PT",
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
