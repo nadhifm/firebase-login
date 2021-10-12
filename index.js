@@ -69,6 +69,6 @@ var recaptcha_response = grecaptcha.getResponse();
 function logout() {
   firebase.auth().signOut();
   grecaptcha.reset();
-  document.getElementById('email_field').value = '';
-  document.getElementById('email_field').value = '';
+  document.getElementById("email_field").value = '';
+  document.getElementById("password_field").value = '';
 }
