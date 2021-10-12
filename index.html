@@ -12,7 +12,10 @@
       <h3>Firebase Login</h3>
       <input type="email" placeholder="Email..." id="email_field" />
       <input type="password" placeholder="Password..." id="password_field" />
-
+      <div
+        class="g-recaptcha"
+        data-sitekey="6Ld5AsUcAAAAAAVf34pUiQTcX1GEYEhQLdsmktqe"
+      ></div>
       <button onclick="login()">Login to Account</button>
       <button onclick="register()">Create Account</button>
     </div>
@@ -26,9 +29,10 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
       // Initialize Firebase
-      var config = {
+      const config = {
         apiKey: "AIzaSyCeYqPvs6sAciuc5_MyVuUizjkQ1cc_5ME",
         authDomain: "web-login-4678e.firebaseapp.com",
         projectId: "web-login-4678e",
